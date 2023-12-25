@@ -20,4 +20,4 @@ pkg install -y build-essential git emacs
 git clone https://github.com/cabins/emacs.d.git ~/.emacs.d
 
 # some funny or useful pkgs
-pkg install -y jq tree which wget curl axel aria2 proot-distro
+pkg install -y jq tree which wget curl axel aria2 proot-distro openssh
