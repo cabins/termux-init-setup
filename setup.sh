@@ -11,6 +11,7 @@ pkg install -y python{,-pip} rust{,-analyzer} golang nodejs kotlin
 echo "export GOPATH=~/.go" >> ~/.bashrc
 echo "export PATH=$PATH:$GOPATH/bin" >> .bashrc
 source ~/.bashrc
+go env -w GOPROXY=https://goproxy.cn,direct
 go install golang.org/x/tools/gopls@latest
 
 pip install "python-lsp-server[all]"
