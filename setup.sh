@@ -11,7 +11,7 @@ pkg install -y python{,-pip} rust{,-analyzer} golang nodejs kotlin openjdk-17
 mkdir -p ~/.devel/{go,java/jdtls}
 
 echo "export GOPATH=~/.devel/go" >> ~/.bashrc
-echo "export PATH=$PATH:$GOPATH/bin" >> .bashrc
+echo "export PATH=\$PATH:\$GOPATH/bin" >> .bashrc
 source ~/.bashrc
 go env -w GOPROXY=https://goproxy.cn,direct
 go install golang.org/x/tools/gopls@latest
@@ -29,7 +29,7 @@ pkg install -y jq tree which wget curl axel aria2 proot-distro openssh
 axel -c -n 5 https://www.eclipse.org/downloads/download.php?file=/jdtls/snapshots/jdt-language-server-latest.tar.gz -o ~/.devel/java/jdtls-latest.tar.gz
 tar xvf ~/.devel/java/jdtls-latest.tar.gz -C ~/.devel/java/jdtls
 echo "export JDTLS_HOME=~/.devel/java/jdtls" >> ~/.bashrc
-echo "export PATH=$PATH:$JDTLS_HOME/bin" >> ~/.bashrc
+echo "export PATH=\$PATH:\$JDTLS_HOME/bin" >> ~/.bashrc
 
 # install the style script
 echo "Installing the tstyle..."
