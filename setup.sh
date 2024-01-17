@@ -12,7 +12,6 @@ mkdir -p ~/.devel/{go,java/jdtls}
 
 echo "export GOPATH=~/.devel/go" >> ~/.bashrc
 echo "export PATH=\$PATH:\$GOPATH/bin" >> .bashrc
-source ~/.bashrc
 go env -w GOPROXY=https://goproxy.cn,direct
 go install golang.org/x/tools/gopls@latest
 
@@ -30,6 +29,7 @@ axel -c -n 5 https://www.eclipse.org/downloads/download.php?file=/jdtls/snapshot
 tar xvf ~/.devel/java/jdtls-latest.tar.gz -C ~/.devel/java/jdtls
 echo "export JDTLS_HOME=~/.devel/java/jdtls" >> ~/.bashrc
 echo "export PATH=\$PATH:\$JDTLS_HOME/bin" >> ~/.bashrc
+source ~/.bashrc
 
 # install the style script
 echo "Installing the tstyle..."
