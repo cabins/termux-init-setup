@@ -26,7 +26,7 @@ git clone https://github.com/cabins/emacs.d.git ~/.emacs.d
 pkg install -y jq tree which wget curl axel aria2 proot-distro openssh
 
 # install jdtls
-axel -n 5 https://www.eclipse.org/downloads/download.php?file=/jdtls/snapshots/jdt-language-server-latest.tar.gz -o ~/.devel/java/jdtls-latest.tar.gz
+axel -c -n 5 https://www.eclipse.org/downloads/download.php?file=/jdtls/snapshots/jdt-language-server-latest.tar.gz -o ~/.devel/java/jdtls-latest.tar.gz
 tar xvf ~/.devel/java/jdtls-latest.tar.gz -C ~/.devel/java/jdtls
 echo "export JDTLS_HOME=~/.devel/java/jdtls" >> ~/.bashrc
 echo "export PATH=$PATH:$JDTLS_HOME/bin" >> ~/.bashrc
