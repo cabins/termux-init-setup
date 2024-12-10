@@ -1,23 +1,26 @@
+function log-echo {
+    echo -e "♪♪♪ $1\n"
+}
 
 function update-os {
-    echo -e "\n♪ Upgrading OS..."
+    log-echo "Upgrading OS..."
     pkg update
     pkg upgrade -y
 
-    echo -e "\n♪ Cleaning packages..."
+    log-echo "Cleaning packages..."
     pkg autoclean
     pkg clean
 
-    echo -e "\n♪ Done."
+    log-echo "Done."
 }
 
 function update-pip {
     PIP_OUTDATED_PACKAGES=$(pip list --outdated | tail -n +3)
     if [ "" == "$PIP_OUTDATED_PACKAGES" ]; then
-        echo -e "\n♪ Python packages are already latest."
+        log-echo "Python packages are already latest."
         return
     fi
 
     echo $PIP_OUTDATED_PACKAGES | awk '{print $1}' | xargs pip install -U
-    echo -e "\n♪ Pip upgrade done."
+    log-echo "Pip upgrade done."
 }
