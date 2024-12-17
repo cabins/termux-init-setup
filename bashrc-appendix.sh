@@ -1,5 +1,5 @@
 function log-echo {
-    echo -e "🎉🎉🎉 $1\n"
+    echo -e "\n🍒🍒🍒 $1\n"
 }
 
 function update-os {
