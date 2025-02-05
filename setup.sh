@@ -6,7 +6,7 @@ termux-change-repo
 
 # install packages for programming
 pkg upgrade -y
-pkg install -y python{,-pip} rust{,-analyzer} golang nodejs kotlin openjdk-17
+pkg install -y python{,-pip} rust{,-analyzer} golang nodejs kotlin openjdk-21
 
 mkdir -p ~/.devel/{go,java/jdtls}
 
@@ -34,3 +34,9 @@ source ~/.bashrc
 # install the style script
 echo "Installing the tstyle..."
 git clone https://github.com/htr-tech/tstyle ~/tstyle
+
+# append bashrc
+curl -sL https://raw.githubusercontent.com/cabins/termux-init-setup/refs/heads/master/bashrc-appendix.sh >> ~/.bashrc
+
+# source bashrc
+source ~/.bashrc
