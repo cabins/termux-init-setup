@@ -16,6 +16,7 @@ go env -w GOPROXY=https://goproxy.cn,direct
 go install golang.org/x/tools/gopls@latest
 
 pip install "python-lsp-server[all]"
+npm install bash-language-server
 
 # install build-essentials
 pkg install -y build-essential git emacs
