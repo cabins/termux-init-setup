@@ -6,14 +6,14 @@ termux-change-repo
 
 # install packages for programming
 pkg upgrade -y
-pkg install -y python{,-pip} rust{,-analyzer} golang nodejs kotlin openjdk-21
+pkg install -y python{,-pip} rust{,-analyzer} golang gopls nodejs kotlin openjdk-21
 
 mkdir -p ~/.devel/{go,java/jdtls}
 
 echo "export GOPATH=~/.devel/go" >> ~/.bashrc
 echo "export PATH=\$PATH:\$GOPATH/bin" >> .bashrc
 go env -w GOPROXY=https://goproxy.cn,direct
-go install golang.org/x/tools/gopls@latest
+# go install golang.org/x/tools/gopls@latest
 
 pip install "python-lsp-server[all]"
 npm install bash-language-server
